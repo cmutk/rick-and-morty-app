@@ -9,6 +9,7 @@ function CardContentListItem(props) {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
+      spacing={3}
     >
       <Grid item>{props.title1}</Grid>
       <Grid item style={{ fontWeight: 600 }}>

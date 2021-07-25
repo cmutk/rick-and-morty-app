@@ -6,6 +6,7 @@ import {
   Divider,
   Collapse,
   Link,
+  Box,
 } from "@material-ui/core";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import CardContentListItem from "./CardContentListItem.js";
@@ -23,7 +24,7 @@ function CardContentDetails({ char, episodes }) {
           <Divider />
           <Grid container item direction="row">
             <CardActionArea>
-              <Link href={char.location.url} variant="body1" color="inherit">
+              <Link href={char.origin.url} variant="body1" color="inherit">
                 <CardContentListItem
                   title1="Origin"
                   title2={char.origin.name}
@@ -69,21 +70,25 @@ function CardContentDetails({ char, episodes }) {
             </CardActionArea>
           </Grid>
           <Divider />
-          <Grid container item direction="row" justifyContent="space-between">
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <Typography variant="body1" component="div" p={2}>
-                {episodes &&
-                  episodes.map((episode) => {
-                    return (
-                      <CardContentListItem
-                        key={"ep" + episode.id}
-                        title1={episode.episode}
-                        title2={episode.name}
-                      />
-                    );
-                  })}
-              </Typography>
-            </Collapse>
+          <Grid container item direction="row">
+            <Box width={1}>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <Typography variant="body1" component="div" p={2}>
+                  <Grid container item direction="row">
+                    {episodes &&
+                      episodes.map((episode) => {
+                        return (
+                          <CardContentListItem
+                            key={"ep" + episode.id}
+                            title1={episode.episode}
+                            title2={episode.name}
+                          />
+                        );
+                      })}
+                  </Grid>
+                </Typography>
+              </Collapse>
+            </Box>
           </Grid>
         </Grid>
       </Typography>
