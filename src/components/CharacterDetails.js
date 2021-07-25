@@ -1,8 +1,8 @@
 import React from "react";
 import CardContentDetails from "./CardContentDetails";
+import useGetFeaturedEpisodes from "../hooks/useGetFeaturedEpisodes,";
 import TheCardContent from "./TheCardContent";
 import TheCardHeader from "./TheCardHeader";
-import useListThisFromApi from "./useListThisFromApi";
 
 function CharacterDetails({ char }) {
   const episodeIds = char.episode.map((url) => {
@@ -10,7 +10,7 @@ function CharacterDetails({ char }) {
     return Number(url.replace(urlStringToCut, ""));
   });
   const endpoint = `episode/${episodeIds}`;
-  const { loading, error, items } = useListThisFromApi(endpoint);
+  const { loading, error, items } = useGetFeaturedEpisodes(endpoint);
   const episodes = items.length > 0 ? [...items] : [items];
   console.log(loading, error, episodes);
   return (

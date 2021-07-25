@@ -6,9 +6,9 @@ import {
   Grid,
 } from "@material-ui/core";
 import React, { useState, useRef, useCallback } from "react";
-import CharacterCard from "./CharacterCard";
-import CharacterDetails from "./CharacterDetails";
-import useListAllFromApi from "./useListAllFromApi";
+import CharacterCard from "./components/CharacterCard";
+import CharacterDetails from "./components/CharacterDetails";
+import useGetAllCharacters from "./hooks/useGetAllCharacters";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,7 @@ function App() {
     items: characters,
     hasMore,
     loading,
-  } = useListAllFromApi(query, pageNumber);
+  } = useGetAllCharacters(query, pageNumber);
   const observer = useRef();
   const lastItemElementRef = useCallback(
     (node) => {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function useListAllFromApi(endpoint, pageNumber) {
+export default function useGetAllCharacters(endpoint, pageNumber) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [hasMore, setHasMore] = useState(false);
