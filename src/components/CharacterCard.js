@@ -4,7 +4,7 @@ import TheCardHeader from "./TheCardHeader";
 import TheCardContent from "./TheCardContent";
 function CharacterCard({ char, handleOnClick }) {
   return (
-    <Card>
+    <Card style={{ height: "100%" }}>
       <CardActionArea onClick={() => handleOnClick("paper", char)}>
         <TheCardHeader image={char.image} type={char.type}></TheCardHeader>
         <TheCardContent name={char.name}></TheCardContent>
