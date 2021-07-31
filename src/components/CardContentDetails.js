@@ -15,8 +15,9 @@ function CardContentDetails({ char, episodes }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Typography variant="body1" component="div" noWrap>
+      <Typography variant="body1" component="div" style={{ marginTop: "12px" }}>
         <Grid container direction="column" spacing={2}>
+          <Divider />
           <CardContentListItem title1="Species" title2={char.species} />
           <Divider />
           <CardContentListItem title1="Status" title2={char.status} />
@@ -50,6 +51,10 @@ function CardContentDetails({ char, episodes }) {
               onClick={() => {
                 setOpen(!open);
               }}
+              style={{
+                width: "100%",
+                height: "44px",
+              }}
             >
               <Typography variant="body1" component="div">
                 <Grid
@@ -79,11 +84,23 @@ function CardContentDetails({ char, episodes }) {
                     {episodes &&
                       episodes.map((episode) => {
                         return (
-                          <CardContentListItem
-                            key={"ep" + episode.id}
-                            title1={episode.episode}
-                            title2={episode.name}
-                          />
+                          <Box
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              padding: "4px",
+                              borderStyle: "solid",
+                              borderColor: "rgba(0, 0, 0, 0.2)",
+                              borderWidth: "0px 0px 1px 0px",
+                              width: "100%",
+                            }}
+                          >
+                            <CardContentListItem
+                              key={"ep" + episode.id}
+                              title1={episode.episode}
+                              title2={episode.name}
+                            />
+                          </Box>
                         );
                       })}
                   </Grid>
