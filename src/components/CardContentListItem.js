@@ -10,15 +10,11 @@ function CardContentListItem(props) {
       alignItems="center"
       spacing={3}
     >
-      <Grid item xs={2}>
+      <Grid item xs={4}>
         {props.title1}
       </Grid>
-      <Grid item xs={10}>
-        <Typography
-          noWrap
-          style={{ fontWeight: 600, textAlign: "right" }}
-          alignRight
-        >
+      <Grid item xs={8}>
+        <Typography style={{ fontWeight: 600, textAlign: "right" }} alignRight>
           {props.title2}
         </Typography>
       </Grid>
