@@ -65,7 +65,7 @@ function App() {
           </DialogContent>
         )}
       </Dialog>
-      <Grid container spacing={2}>
+      <Grid container alignItems="stretch" spacing={2}>
         {characters &&
           characters.map((character, index) => {
             return (

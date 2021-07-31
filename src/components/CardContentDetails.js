@@ -10,11 +10,12 @@ import {
 } from "@material-ui/core";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import CardContentListItem from "./CardContentListItem.js";
+
 function CardContentDetails({ char, episodes }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Typography variant="body1" component="div">
+      <Typography variant="body1" component="div" noWrap>
         <Grid container direction="column" spacing={2}>
           <CardContentListItem title1="Species" title2={char.species} />
           <Divider />

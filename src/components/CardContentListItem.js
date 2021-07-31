@@ -1,6 +1,5 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import React from "react";
-
 function CardContentListItem(props) {
   return (
     <Grid
@@ -11,9 +10,17 @@ function CardContentListItem(props) {
       alignItems="center"
       spacing={3}
     >
-      <Grid item>{props.title1}</Grid>
-      <Grid item style={{ fontWeight: 600 }}>
-        {props.title2}
+      <Grid item xs={2}>
+        {props.title1}
+      </Grid>
+      <Grid item xs={10}>
+        <Typography
+          noWrap
+          style={{ fontWeight: 600, textAlign: "right" }}
+          alignRight
+        >
+          {props.title2}
+        </Typography>
       </Grid>
     </Grid>
   );
